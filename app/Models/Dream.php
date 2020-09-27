@@ -11,6 +11,6 @@ class Dream extends Model
 
     protected $table = "dreams";
 
-    protected $guarded = ["titulo" , "descricao"];
+    protected $fillable = ["titulo" , "descricao"];
     
 }

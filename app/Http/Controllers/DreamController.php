@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dream;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Dream;
 
 class DreamController extends Controller
 {
@@ -22,19 +22,18 @@ class DreamController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'titulo' => 'required|min:2|max:80',
-            'descricao' => 'required|min:10|max:250',
+            'descricao' => 'required|min:5|max:250',
         ]);
 
         if ($validator->fails()) {
-            return redirect('create')
-                    ->withErrors($validator);
+            return view('dreams.create')->withErrors($validator->errors());
         }
 
         $dream = new Dream();
-        $dream->titulo = $request['titulo'];
-        $dream->descricao = $request['descricao'];
+        $dream->titulo = $request->titulo;
+        $dream->descricao = $request->descricao;
         $dream->save();
 
-        return redirect('home');
+        return view('home');
     }
 }
