@@ -19,15 +19,13 @@
               <button type="submit" class="btn btn-primary">Salvar</button>
       
           </form>
-        @error('titulo')
-            <div  class="alert alert-danger">{{ $message }}</div>
-        @enderror
-        @error('descricao')
-            <div  class="alert alert-danger">{{ $message }}</div>
-        @enderror
-        <!-- @if($errors->any()) 
-            {{ implode('', $errors->all('<div>:message</div>')) }}
-        @endif -->
+
     </div>
+    @error('titulo')
+        <div  class="alert alert-danger container mt-1 col-4 text-center">{{ $message }}</div>
+    @enderror
+    @error('descricao')
+        <div  class="alert alert-danger container mt-1 col-4 text-center">{{ $message }}</div>
+    @enderror 
 </main>
 @endsection
