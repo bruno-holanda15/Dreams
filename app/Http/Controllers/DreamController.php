@@ -26,7 +26,7 @@ class DreamController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return view('dreams.create')->withErrors($validator->errors());
+            return redirect('create')->withErrors($validator->errors());
         }
 
         $dream = new Dream();
@@ -34,6 +34,6 @@ class DreamController extends Controller
         $dream->descricao = $request->descricao;
         $dream->save();
 
-        return view('home');
+        return redirect('home')->with('dreamsSent', 'Sonhos inseridos com sucesso.');
     }
 }

@@ -16,8 +16,14 @@
     </header>
 
     @yield('main')
+
+    @if (session('dreamsSent'))
+        <div class="alert alert-success">
+            {{ session('dreamsSent') }}
+        </div>
+    @endif
    
-    <footer class="mt-2 bg-dark text-primary p-2 text-center ">
+    <footer class="mb-0 bg-dark text-primary p-2 text-center ">
         <span class="align-middle">Footer</span>
     </footer>   
 
