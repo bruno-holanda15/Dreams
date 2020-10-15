@@ -21,5 +21,6 @@ Route::get('/', function () {
 
 Route::get('/home',[DreamController::class, 'home']);
 Route::get('/create',[DreamController::class, 'create']);
+Route::get('/list',[DreamController::class, 'list']);
 Route::post('/store',[DreamController::class, 'store']);
 

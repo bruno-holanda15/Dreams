@@ -18,6 +18,12 @@ class DreamController extends Controller
         return view('dreams.create');
     }
 
+    public function list()
+    {
+        $sonhos = Dream::all();
+        return view('dreams.list', ['sonhos' => $sonhos]);
+    }
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [

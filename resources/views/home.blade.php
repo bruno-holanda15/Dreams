@@ -10,8 +10,10 @@
 
     <header>
         <nav class="nav bg-dark">
-            <a class="nav-link" href="{{ url('create') }}">Sonhos</a>
+            <a class="nav-link" href="{{ url('create') }}">Criar Sonhos</a>
+            <a class="nav-link" href="{{ url('list') }}">Listar Sonhos</a>
             <a class="nav-link" href="{{ url('home') }}">Logo</a>
+
         </nav>
     </header>
 
